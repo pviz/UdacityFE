@@ -1,0 +1,202 @@
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url('fonts/Roboto-Thin.ttf') format('truetype');
+}
+
+html {
+    font-family: 'Roboto-Thin', sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.sidebar, .content {
+    float: left;
+}
+
+.sidebar {
+    width: 15%;
+    padding-right: 15px;
+}
+
+.sidebar-content {
+    text-align: right;
+    float: right;
+    width: 100%;
+}
+
+.sidebar-column {
+    float: right;
+    padding: 5px 0px;
+}
+
+.sidebox {
+    float: right;
+}
+
+.content {
+    width: 80%;
+}
+
+.logo {
+    width: 20%;
+    float: left;
+}
+
+.logo-img {
+    width: 40%;
+}
+
+.headerText {
+    width: 80%;
+    float: right;
+    text-align: right;
+}
+
+.main-text, .sub-text {
+    text-transform: uppercase;
+}
+
+.sub-text {
+    font-weight: 600;
+}
+
+.main-text {
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.header {
+    padding: 15px;
+    height: 50px;
+    border-bottom: 2px solid rgb(140, 159, 176);
+}
+
+.block-img {
+    width: 100%;
+    padding-top: 15px;
+    height: 300px;
+}
+
+.padding15 {
+    padding: 15px;
+}
+
+.padtop10{
+    padding-top:5px;
+}
+.empty-header {
+    height: 90px;
+}
+
+.sidebox {
+    height: 50px;
+    width: 50px;
+}
+
+.side1 {
+    background-color: #02b3e4;
+}
+
+.side2 {
+    background-color: #2d3c49;
+}
+
+.side3 {
+    background-color: #7d97ad;
+}
+
+.box-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.box-item {
+    background-color: cornflowerblue;
+    width: 32%;
+    height: 60px;
+    text-align: center;
+    font-weight: 600;
+}
+
+    .box-item img {
+        width: 100%;
+        height: 150px;
+    }
+
+.title {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(141, 160, 177);
+}
+
+
+a {
+    font-size: 10px;
+    color: black;
+    text-decoration: none;
+    word-break: normal;
+}
+
+
+
+
+
+@media (max-device-width: 480px) {
+    .box-item img {
+        width: 100%;
+        height: 80px;
+    }
+    .logo-img {
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 500px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 600px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 800px;
+    }
+}
