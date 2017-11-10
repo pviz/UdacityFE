@@ -3,16 +3,11 @@ Author: Penny Vizenor
 Purpose: App engine for playing game
 */
 
-/*
-Method: random(min, max)
-Input: Takes minimum and maximum numbers
-Output: return a random number between min and max values
-*/
 var random = function (min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 };
 
-//global variable declaration
+
 var imgData = [],
 
      heart = '<img src = "images/Heart.png">',
@@ -23,61 +18,53 @@ var imgData = [],
 
     item,
 
-    //Instance of Player Object
+    
     player;
 
 
-//Push the life images; set heart image and enemy-bug image that runs in multiple rows.
+
 imgData.push('images/Gem_Blue.png');
 imgData.push('images/Gem_Green.png');
 imgData.push('images/Gem_Orange.png');
 
-//The player must avoid collison with this Enemy
+
 var Enemy = function () {
 
-    //Create random number for having various X-position and Speeds
+    
     this.type = random(1, 6);
 
-    //Attach the enemy bug to the sprite
+    
     this.sprite = enemybug;
 
-    //Set the X position of the enemy bug
+    
     this.x = this.type * -101;
 
-    //set the random Y position for the enemy bug
+    
     this.y = random(0, 4) * 83 + 62;
 
-    //set the speed for the Enemy
+    
     this.speed = this.type * 100;
 };
 
-/*
-Method: Enemy.update(dt)
-Input: A time delta between ticks
-Output: none/void
-Description: Update the enemy's position, required method for game
-*/
+
 Enemy.prototype.update = function(dt) {
 
-    //Get the Length of allEnemies Array object
+    
     var AElength = allEnemies.length
         index = 0;
 
         this.x += this.speed * dt;
 
-    //Loop through each of the enemy bug and 
-    //check if the X-pos is off from the screen
+    
     for (; index < AElength; index++) {
 
-        //If the enemy bug is off from the stage, remove it and 
-        //add it back to the array
+        
         if (allEnemies[index].x > 808) {
           allEnemies.splice(index, 1, new Enemy());
         }
     }
 
-    //Add a new enemy bug at every 5th Level and 
-    //After every reset, make sure allEnemies length will be set to default(4).
+    
     if (AElength < 4 + Math.floor(player.level / 5)) {
         allEnemies.push(new Enemy());
     } else if (AElength > 4 + Math.floor(player.level / 5)) {
@@ -85,12 +72,7 @@ Enemy.prototype.update = function(dt) {
     }
 };
 
-/*
-Method: Enemy.render()
-Input: none
-Output: none/void
-Description: Operates on an instance of Enemy and draws the enemy on the screen.
-*/
+
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
@@ -104,13 +86,13 @@ Description: Lifes/Items that player can collect while playing the game
 */
 var Item = function() {
 
-    //Define Random number for selecting an appropriate Gem from ImgData array
+   
     this.type = random(1, 4);
 
-    //Attach Gem image to the sprite
+    
     this.sprite = imgData[(this.type)-1];
 
-    //Set X and Y cordinates of the Gem 
+     
     this.x = random(0, 8) * 101;
     this.y = random(0, 4) * 83 + 55;
 };
@@ -134,17 +116,17 @@ Description: The player starts at a random location on the bottom row as a
 */
 var Player = function (type) {
 
-    //Receive the player type. This represents various player icons
+    
     this.type = type;
 
-    //Load the appropriate player icon
+    
     this.sprite = 'images/char-' + this.type + '.png';
 
-    //set the default Y and Random X position of the player
+    
     this.x = random(0, 8) * 101;
     this.y = 402;
 
-    //set the Random EXIT door block position
+    
     this.exit = random(0, 8);
 
     //Game default; player to 1, score to 0, Number of Lives to 3 and Run the game
@@ -276,7 +258,7 @@ Player.prototype.handleInput = function (keycode) {
             window.close();
         }else {
 
-            //Uesr doesn't want to quit, hence resume the page
+            //User doesn't want to quit, resume the page
             this.paused = false;
         }
 
