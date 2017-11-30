@@ -3,7 +3,7 @@ nanodegree
 
 All the sub-directories or branches in this repository are the projects assigned from Nanodegree for front-end developer.
 URL: http://htmlpreview.github.io/?https://github.com/bhaskarsai/nanodegree/blob/master/arcade_game/index.html
-
+load index.html in your any browser
 Play RULES:
 ====================================================================================
 
